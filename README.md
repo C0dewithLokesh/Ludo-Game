@@ -1,10 +1,4 @@
-## 🚨 Tutorial
-
-This repository contains the code corresponding to an in-depth tutorial available on our YouTube channel, <a href="https://www.youtube.com/@C0dewithlokesh/videos" target="_blank"><b>Code with Lokesh</b></a>. 
-
-<a href="https://youtu.be/ab6kjpq-oEE?si=_jWciSrnuhFid45y" target="_blank"><img src="https://github.com/sujatagunale/EasyRead/assets/151519281/1736fca5-a031-4854-8c09-bc110e3bc16d" /></a>
-
-
+# Ludo Game
 # Getting Started
 
 ## Step 1: Start the Metro Server
