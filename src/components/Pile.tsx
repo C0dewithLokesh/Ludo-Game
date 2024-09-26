@@ -11,7 +11,19 @@ import {
 import {Circle, Svg} from 'react-native-svg';
 import {BackgroundImage} from '../helpers/GetIcon';
 
-const Pile = ({color, player}: {color: string; player: 2}) => {
+const Pile = ({
+  color,
+  player,
+  cell,
+  onPress,
+  pieceId,
+}: {
+  color: string;
+  player: 2;
+  cell: boolean;
+  onPress: () => void;
+  pieceId: number;
+}) => {
   const rotation = useRef(new Animated.Value(0)).current;
   const pileIcon: ImageSourcePropType | null = BackgroundImage.GetImage(color);
 
@@ -40,7 +52,7 @@ const Pile = ({color, player}: {color: string; player: 2}) => {
   );
 
   return (
-    <TouchableOpacity className="flex-1 border-white items-center justify-center">
+    <TouchableOpacity className="relative flex-1 items-center justify-center">
       <View className="w-[15px] h-[15px] absolute rounded-[25px] items-center justify-center">
         <Animated.View style={{transform: [{rotate: rotateInterpolate}]}}>
           <Svg width={'18'} height={'18'}>
@@ -60,7 +72,7 @@ const Pile = ({color, player}: {color: string; player: 2}) => {
       {pileIcon && (
         <Image
           source={pileIcon}
-          className="w-[32px] h-[32px] absolute top-[-14px] left-[0.5px]"
+          className="w-[32px] h-[32px] absolute top-[-16px]"
         />
       )}
     </TouchableOpacity>
