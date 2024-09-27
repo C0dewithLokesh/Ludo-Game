@@ -1,5 +1,5 @@
-import React, {useMemo} from 'react';
-import {Text, View} from 'react-native';
+import React, { useMemo } from 'react';
+import { View } from 'react-native';
 import Cell from './Cell';
 
 const HorizontalPath = React.memo(

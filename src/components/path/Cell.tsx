@@ -1,9 +1,9 @@
-import React, { memo, useMemo } from 'react';
-import { View } from 'react-native';
-import { ArrowRightIcon, StarIcon } from 'react-native-heroicons/outline';
-import { RFValue } from 'react-native-responsive-fontsize';
+import React, {memo, useMemo} from 'react';
+import {View} from 'react-native';
+import {ArrowRightIcon, StarIcon} from 'react-native-heroicons/outline';
+import {RFValue} from 'react-native-responsive-fontsize';
 import tw from 'twrnc';
-import { ArrowSpot, SafeSpots, StarSpots } from '../helpers/PlotData';
+import {ArrowSpot, SafeSpots, StarSpots} from '../../helpers/PlotData';
 
 const Cell = ({color, id}: {color: string; id: number}) => {
   const isSafeSpot = useMemo(() => SafeSpots.includes(id), [id]);
@@ -35,15 +35,15 @@ const Cell = ({color, id}: {color: string; id: number}) => {
           color={'grey'}
         />
       )}
-      <View className="absolute top-0 left-0 right-0 bottom-0 z-[99]">
-        {/* <Pile
+      {/* <View className="absolute top-0 left-0 right-0 bottom-0 z-[99]">
+        <Pile
           cell={true}
           player={2}
           onPress={() => null}
           pieceId={id}
           color={Colors.green}
-        /> */}
-      </View>
+        />
+      </View> */}
     </View>
   );
 };

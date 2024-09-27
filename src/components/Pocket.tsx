@@ -1,7 +1,7 @@
-import React, { FC } from 'react';
-import { View } from 'react-native';
+import React, {FC} from 'react';
+import {View} from 'react-native';
 import tw from 'twrnc';
-import { Colors } from '../constants/Colors';
+import {Colors} from '../constants/Colors';
 import Pile from './Pile';
 
 interface PocketProps {
@@ -18,7 +18,7 @@ interface PlotProps {
 const Pocket: FC<PocketProps> = React.memo(({color, player}) => {
   return (
     <View
-      className="border-[0.4px] w-[40%] h-full items-center justify-center"
+      className="w-[40%] h-full items-center justify-center"
       style={tw`bg-[${color}]`}>
       <View
         className="bg-white w-[70%] h-[70%] p-[15px] flex items-center justify-between"
@@ -38,9 +38,7 @@ const Pocket: FC<PocketProps> = React.memo(({color, player}) => {
 
 const Plot: FC<PlotProps> = ({color, player, pieceNo}) => {
   return (
-    <View
-      className="w-[36%] h-[80%] rounded-full"
-      style={tw`bg-[${color}]`}>
+    <View className="w-[36%] h-[80%] rounded-full" style={tw`bg-[${color}]`}>
       <Pile color={color} player={player} />
     </View>
   );

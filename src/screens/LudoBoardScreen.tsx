@@ -3,9 +3,10 @@ import {Image, TouchableOpacity, View} from 'react-native';
 import tw from 'twrnc';
 import MenuIcon from '../assets/images/menu.png';
 import Dice from '../components/Dice';
-import HorizontalPath from '../components/HorizontalPath';
+import FourTriangles from '../components/FourTriangles';
+import HorizontalPath from '../components/path/HorizontalPath';
+import VerticalPath from '../components/path/VerticalPath';
 import Pocket from '../components/Pocket';
-import VerticalPath from '../components/VerticalPath';
 import Wrapper from '../components/Wrapper';
 import {Colors} from '../constants/Colors';
 import {deviceHeight} from '../constants/Scaling';
@@ -35,6 +36,7 @@ const LudoBoardScreen = () => {
 
           <View className="flex flex-row items-center justify-between bg-[#1E5162] w-full h-[20%]">
             <HorizontalPath color={Colors.green} cells={Plot1Data} />
+            <FourTriangles />
             <HorizontalPath color={Colors.blue} cells={Plot3Data} />
           </View>
 
