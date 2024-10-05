@@ -32,35 +32,41 @@ const LudoBoardScreen = () => {
 
   const isFocused = useIsFocused();
 
-  const [showStartImage, setShowStartImage] = useState(true);
+  const [showStartImage, setShowStartImage] = useState(false);
   const [menuVisible, setMenuVisible] = useState(false);
   const opacity = useRef(new Animated.Value(1)).current;
 
-  useEffect(() => {
-    if (isFocused) {
-      setShowStartImage(true);
-      const blinkAnimation = Animated.loop(
-        Animated.sequence([
-          Animated.timing(opacity, {
-            toValue: 0,
-            duration: 500,
-            useNativeDriver: true,
-          }),
-          Animated.timing(opacity, {
-            toValue: 1,
-            duration: 500,
-            useNativeDriver: true,
-          }),
-        ]),
-      );
+  // useEffect(() => {
+  //   if (isFocused) {
+  //     setShowStartImage(true);
+  //     const blinkAnimation = Animated.loop(
+  //       Animated.sequence([
+  //         Animated.timing(opacity, {
+  //           toValue: 0,
+  //           duration: 500,
+  //           useNativeDriver: true,
+  //         }),
+  //         Animated.timing(opacity, {
+  //           toValue: 1,
+  //           duration: 500,
+  //           useNativeDriver: true,
+  //         }),
+  //       ]),
+  //     );
 
-      blinkAnimation.start();
+  //     blinkAnimation.start();
 
-      return () => {
-        blinkAnimation.stop();
-      };
-    }
-  }, [isFocused]);
+  //     const timeout = setTimeout(() => {
+  //       blinkAnimation.stop();
+  //       setShowStartImage(false);
+  //     }, 2500);
+
+  //     return () => {
+  //       blinkAnimation.stop();
+  //       clearTimeout(timeout);
+  //     };
+  //   }
+  // }, [isFocused]);
 
   return (
     <Wrapper>
@@ -72,8 +78,8 @@ const LudoBoardScreen = () => {
         className="w-full flex items-center"
         style={tw`h-[${deviceHeight * 0.6}px]`}>
         <View className="flex flex-row items-center justify-between px-[30px] w-full">
-          <Dice color={Colors.green} />
-          <Dice color={Colors.yellow} rotate />
+          <Dice color={Colors.green} data={player2} player={2} />
+          <Dice color={Colors.yellow} rotate data={player3} player={3} />
         </View>
 
         <View className="w-full flex-1 p-[10px]">
@@ -97,8 +103,8 @@ const LudoBoardScreen = () => {
         </View>
 
         <View className="flex flex-row items-center justify-between px-[30px] w-full">
-          <Dice color={Colors.red} />
-          <Dice color={Colors.blue} rotate />
+          <Dice color={Colors.red} data={player1} player={1} />
+          <Dice color={Colors.blue} rotate data={player4} player={4} />
         </View>
       </View>
 
